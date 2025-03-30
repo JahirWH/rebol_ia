@@ -3,7 +3,7 @@
 
 # 🌱 Rebol IA - Asistente de Botánica
 
-![Banner del proyecto](/assets/banner.png)
+![Banner del proyecto](/src/assets/banner.png)
 
 ## ✨ Características principales
 - Consultas a IA sobre cuidado de plantas
@@ -33,5 +33,3 @@ npm install
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm run dev:full`        |  Abre                                            |
-                   |
-
