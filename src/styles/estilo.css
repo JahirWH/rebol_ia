@@ -1,0 +1,229 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+.sigmar-regular {
+  font-family: "Sigmar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+nav{
+    display: flex;
+    position: relative;
+    height:10vh;
+    width: 100%;
+
+}
+.title{
+    margin: auto;
+    text-align: left;
+
+    width: 69%;
+}
+.options{
+    display: flex;
+    margin:auto;
+    text-align: right;
+
+    width: 29%;
+}
+.options div{
+    cursor: pointer;
+    text-align: center;
+    width: calc(95%/2);
+    margin: auto;
+    border:1px solid black;
+}
+
+.options div:hover{
+    color: white;
+    background-color: black;
+}
+.section1 {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+}
+
+.section1_img {
+    margin: auto;
+    margin-left: 20px;
+    width: 40%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.section1_img img {
+    width: 95%;
+    border-radius: 20px;
+    height: auto;
+}
+
+.section_text {
+    width: 50%;
+    height: fit-content;
+    margin: auto;
+    margin-right: 40px;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.section_2 {
+/*    background-color: #1B1C1D;
+*/
+    height: fit-content;
+    width: 100%;
+    position: relative;
+}
+.title_write{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.chat-container {
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+        min-height: 200px;
+
+    height: fit-content;
+    padding: 15px;
+/*    background: rgba(255, 255, 255, 0.2);
+*//*    backdrop-filter: blur(10px);
+*/    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.chat-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.input-group, .response-group{
+    width: 90%;
+    margin: auto;
+
+}
+.response-gruoup{
+    height: fit-content;
+}
+
+ textarea {
+    width: 100%;
+    margin: auto;
+    height: 90%;
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    resize: none;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+
+ textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+ textarea:focus {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
+.controls-group{
+    position: absolute;
+  bottom: 25px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+  border: none;
+  z-index: 2;
+}
+.send-button{
+border: none;
+  background-color: transparent;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.send-button img{
+    margin: auto;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    margin-top: 50px;
+}
+
+.btn button {
+    width: 200px;
+    border: none;
+    border-radius: 25px;
+    background-color: #E9E9E9;
+    font-size: 16px;
+    padding: 15px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn button:hover {
+  background-color: rgb(157, 157, 157);
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.ejemplos {
+  text-align: center;
+  width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #cacacaab;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    height: fit-content;
+    overflow: hidden;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.ejemplos-contenido {
+    display: flex;
+      justify-content: space-around;
+ margin: auto;
+height: 100%;
+
+}
+.img-ejemplo{
+    width: calc(95%/4);
+    height:300px;   
+    overflow: hidden;
+}
+
+.img-ejemplo img{
+  width: fit-content;
+  height: 70%;
+  border-radius: 20px;
+  margin: auto;
+  padding:10px;
+}

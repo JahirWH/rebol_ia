@@ -1,0 +1,125 @@
+---
+
+import '../styles/estilo.css'
+
+
+---
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../src/components/js.js" defer></script> 
+    <title>Rebolia - Mini Biomas y Plantas de Humedad</title>
+</head> 
+<body>
+    <nav>
+        <div class="title"> <h3>Rebol IA</h3></div>
+        <div class="options">
+            <div class="login">Acceder</div>
+            <div class="contacto">Contacto</div>
+        </div>
+    </nav>
+    <section class="section1">
+
+        <div class="section1_img">
+            <img src="/bonsai.jpg" alt="bonsai">
+        </div>
+
+
+        <div class="section_text">
+            <h2>Rebol IA</h2>
+           <p>Espacio dedicado a el cuidado y la creación de mini biomas en casa. Aquí aprenderás sobre su crecimiento, cuidados esenciales y cómo replicar un ecosistema equilibrado en un espacio reducido.</p> <p>Además, podrás dar seguimiento a tu propio mini bioma subiendo fotos periódicamente. Con la ayuda de la inteligencia artificial, recibirás recomendaciones personalizadas sobre si necesita agua u otros cuidados específicos para mantenerlo saludable.</p>
+            <p>Exploraremos factores clave como humedad, iluminación y sustrato, además de guías paso a paso para crear tu propio mini bioma en terrarios o jardines cerrados.</p> <p>Si te apasiona la naturaleza, este sitio es para ti. Descubre cómo mantener un ecosistema autosuficiente y disfrutar de su belleza en tu hogar. ¡Acompáñame en este viaje verde!</p>
+            <h4>Esta es la red social de las plantas!!</h4>
+        </div>
+
+    </section>
+
+    
+    
+
+   <section class="section_2">
+    <div class="title_write">
+        <h2>Vamos pregúntame y comencemos a plantar!!</h2>
+    </div>
+    
+    <div class="chat-container">
+        <div class="input-group">
+            <label for="pregunta" class="sr-only">Tu pregunta</label>
+            <textarea 
+                id="pregunta" 
+                placeholder="Escribe tu pregunta aquí..." 
+                aria-label="Tu pregunta para Rebol-IA"
+            ></textarea>
+        </div>
+        
+        <div class="controls-group">
+            <button id="enviar" class="send-button" aria-label="Enviar pregunta">
+                <img src="/send.svg" alt="Enviar">
+            </button>
+            <span class="loading" id="loading"></span>
+        </div>
+        
+        <div class="response-group">
+            <label for="respuesta">Respuesta de Rebol-IA:</label>
+            <textarea 
+                id="respuesta" 
+                readonly 
+                placeholder="La respuesta aparecerá aquí..."
+                aria-live="polite"
+            ></textarea>
+        </div>
+    </div>
+</section>
+
+<div class="btn">    
+    <button onclick="show()">Mostrar ejemplos</button>
+</div>
+
+
+    <section style="display:none" id="ejemplos" class="ejemplos">
+        <h3>Comparte el tuyo..</h3>
+        <div class="ejemplos-contenido">
+
+            <div class="img-ejemplo">
+                <img src="bonsai.jpg">
+                <p>Este arbol crecio de 1028 
+                    se llama <strong> Fakuberto</strong>
+                </p>
+            </div>
+            <div class="img-ejemplo">
+                <img src="bonsai.jpg">
+                <p>Este arbol crecio de 2028 
+                    se llama <strong> Rocio</strong>
+                </p>
+            </div>       
+              <div class="img-ejemplo">
+                            <img src="bonsai.jpg">
+            </div> 
+              <div class="img-ejemplo">
+                            <img src="bonsai.jpg">
+            </div>  	
+
+            </div>
+    </section>
+    <script type="text/javascript">
+     
+    fetch('http://localhost:3000/server.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ pregunta })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Procesar la respuesta
+      console.log(data.respuesta);
+    })
+    .catch(error => console.error('Error:', error));
+    </script>
+
+</body>

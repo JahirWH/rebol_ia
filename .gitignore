@@ -1,0 +1,42 @@
+# Build outputs
+/dist/
+/.astro/
+/.vercel/
+/.netlify/
+
+# Dependencies
+/node_modules/
+/.pnpm-store/
+/.yarn/
+/.yarn-cache/
+
+# Environment files
+.env*
+!.env.example
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Astro cache
+.cache/
+
+# Testing
+/coverage/
