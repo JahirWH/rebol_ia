@@ -43,6 +43,10 @@ app.post('/api/ia', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('¡Servidor Rebol-IA activo! Usa POST /api/ia para interactuar con la IA.');
+});
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });

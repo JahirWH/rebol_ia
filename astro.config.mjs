@@ -8,7 +8,7 @@ export default defineConfig({
     server: {
       proxy: {
         '/api': {
-          target: 'http://localhost:3001',  // Puerto de tu backend
+          target: 'http://localhost:3000',  // Puerto corregido de tu backend
           changeOrigin: true,
           secure: false
         }
