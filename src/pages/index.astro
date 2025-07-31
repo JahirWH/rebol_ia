@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Rebol IA - Tu Asistente de Botánica">
-  <nav>
+  <nav> 
     <div class="title"><h3>Rebol IA</h3></div>
     <div class="options">
       <div class="login" id="abrir-modal">Acceder</div>
@@ -375,8 +375,14 @@ import Layout from '../layouts/Layout.astro';
         const password = (document.getElementById('login-password') as HTMLInputElement).value;
         // Aquí puedes poner tu lógica real de autenticación
         if (usuario && password) {
-          loginMsg.style.color = '#090';
-          loginMsg.textContent = '¡Login simulado exitoso! (aquí va tu lógica real)';
+          usuario === 'admin' && password === '1234' ?
+          loginMsg.style.color = '#090' :
+          loginMsg.textContent = '¡Login exitoso! (simulado)';
+          window.location.href = '/sub_pages/dasboard';
+      
+
+          // loginMsg.style.color = '#090';
+          // loginMsg.textContent = '¡Login simulado exitoso! (aquí va tu lógica real)';
           // Cerrar el modal después de 1 segundo
           setTimeout(() => {
             if (modalAcceso) modalAcceso.style.display = 'none';

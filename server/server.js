@@ -7,8 +7,8 @@ import { Anthropic } from '@anthropic-ai/sdk';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
-const anthropic = new Anthropic({
+const port = process.env.PORT;
+const anthropic = new Anthropic({ 
   apiKey: process.env.ANTHROPIC_API_KEY
 });
 
@@ -16,6 +16,7 @@ const anthropic = new Anthropic({
 app.use(cors({
   origin: 'http://localhost:4321'  // URL de tu frontend Astro
 }));
+
 app.use(express.json());
 
 // Middleware de autenticación

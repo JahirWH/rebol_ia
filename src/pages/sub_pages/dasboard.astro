@@ -1,0 +1,59 @@
+
+
+<style>
+.dashboard-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+}
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #222;
+    text-align: center;
+}
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.dashboard-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+.dashboard-btn:hover {
+    background: #e0e7ff;
+    color: #1e40af;
+}
+</style>
+
+<div class="dashboard-container">
+    <div class="dashboard-title">Panel de Cuenta</div>
+    <div class="dashboard-buttons">
+        <a href="/" class="dashboard-btn">
+            <li>INICIO</li>
+        </a>
+        <a href="/perfil" class="dashboard-btn">
+            <li>Mi perfil</li>
+        </a>
+        <a href="/configuracion" class="dashboard-btn">
+            <li>Configuración</li>
+        </a>
+    </div>
+</div>
