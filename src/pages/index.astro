@@ -1,11 +1,11 @@
 ---
 // src/pages/index.astro
-import '../styles/estilo.css';
-import Layout from '../layouts/Layout.astro';
+import "../styles/estilo.css";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Rebol IA - Tu Asistente de Botánica">
-  <nav> 
+  <nav>
     <div class="title"><h3>Rebol IA</h3></div>
     <div class="options">
       <div class="login" id="abrir-modal">Acceder</div>
@@ -19,12 +19,15 @@ import Layout from '../layouts/Layout.astro';
       <span class="close" id="cerrar-modal">&times;</span>
       <h2>Acceso</h2>
       <form id="form-login" autocomplete="off">
-        <label for="login-usuario">Usuario:</label>
-        <input type="text" id="login-usuario" name="usuario" required autocomplete="off" />
-        <label for="login-password">Contraseña:</label>
-        <input type="password" id="login-password" name="password" required autocomplete="off" />
+        <input type="text" id="username" placeholder="Usuario" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+        />
         <button type="submit">Iniciar sesión</button>
-        <div id="login-msg" style="margin-top:10px;color:#c00;font-size:0.95em;"></div>
+        <div id="login-msg" class="error-msg"></div>
       </form>
     </div>
   </div>
@@ -35,10 +38,27 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="section_text">
       <h2>Rebol IA</h2>
-      <p>Espacio dedicado a el cuidado y la creación de mini biomas en casa. Aquí aprenderás sobre su crecimiento, cuidados esenciales y cómo replicar un ecosistema equilibrado en un espacio reducido.</p>
-      <p>Además, podrás dar seguimiento a tu propio mini bioma subiendo fotos periódicamente. Con la ayuda de la inteligencia artificial, recibirás recomendaciones personalizadas sobre si necesita agua u otros cuidados específicos para mantenerlo saludable.</p>
-      <p>Exploraremos factores clave como humedad, iluminación y sustrato, además de guías paso a paso para crear tu propio mini bioma en terrarios o jardines cerrados.</p>
-      <p>Si te apasiona la naturaleza, este sitio es para ti. Descubre cómo mantener un ecosistema autosuficiente y disfrutar de su belleza en tu hogar. ¡Acompáñame en este viaje verde!</p>
+      <p>
+        Espacio dedicado a el cuidado y la creación de mini biomas en casa. Aquí
+        aprenderás sobre su crecimiento, cuidados esenciales y cómo replicar un
+        ecosistema equilibrado en un espacio reducido.
+      </p>
+      <p>
+        Además, podrás dar seguimiento a tu propio mini bioma subiendo fotos
+        periódicamente. Con la ayuda de la inteligencia artificial, recibirás
+        recomendaciones personalizadas sobre si necesita agua u otros cuidados
+        específicos para mantenerlo saludable.
+      </p>
+      <p>
+        Exploraremos factores clave como humedad, iluminación y sustrato, además
+        de guías paso a paso para crear tu propio mini bioma en terrarios o
+        jardines cerrados.
+      </p>
+      <p>
+        Si te apasiona la naturaleza, este sitio es para ti. Descubre cómo
+        mantener un ecosistema autosuficiente y disfrutar de su belleza en tu
+        hogar. ¡Acompáñame en este viaje verde!
+      </p>
       <h4>Esta es la red social de las plantas!!</h4>
     </div>
   </section>
@@ -90,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <span class="plant-user">Usuario: Takyiu42</span>
       </div>
-      <img src="/bonsai.jpg" alt="Bonsai Ficus" class="card-image">
+      <img src="/bonsai.jpg" alt="Bonsai Ficus" class="card-image" />
       <div class="card-body">
         <div class="card-actions">
           <span>❤️</span>
@@ -99,9 +119,16 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="ai-analysis">
           <h4>Análisis de Rebol IA</h4>
-          <p><strong>Estado de Salud:</strong> <span class="status-healthy">Excelente</span></p>
+          <p>
+            <strong>Estado de Salud:</strong>
+            <span class="status-healthy">Excelente</span>
+          </p>
           <p><strong>Edad Estimada:</strong> 5 años</p>
-          <p><strong>Recomendación:</strong> El follaje es vigoroso y no se detectan plagas. El riego y la exposición a la luz son adecuados. Continuar con el cuidado actual.</p>
+          <p>
+            <strong>Recomendación:</strong> El follaje es vigoroso y no se detectan
+            plagas. El riego y la exposición a la luz son adecuados. Continuar con
+            el cuidado actual.
+          </p>
         </div>
       </div>
     </div>
@@ -109,289 +136,310 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <style>
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
-  .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    position: relative;
-  }
-  .close {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .close:hover {
-    color: #333;
-  }
-  .modal-content form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .modal-content input[type="text"],
-  .modal-content input[type="password"] {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-  }
-  .modal-content button[type="submit"] {
-    background: #1B1C1D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  .modal-content button[type="submit"]:hover {
-    background: #333;
-  }
-  .ejemplos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #333;
+    }
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .modal-content input[type="text"],
+    .modal-content input[type="password"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    .modal-content button[type="submit"] {
+      background: #1b1c1d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .modal-content button[type="submit"]:hover {
+      background: #333;
+    }
 
-  .plant-card {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
+    .error-msg {
+      color: #dc3545;
+      font-size: 0.9em;
+      margin-top: 8px;
+      text-align: center;
+    }
 
-  .card-header {
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    #login-msg {
+      margin-top: 10px;
+      font-weight: 500;
+    }
 
-  .plant-name {
-    font-weight: 600;
-    display: block;
-  }
+    .ejemplos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-  .plant-origin {
-    font-size: 0.8em;
-    color: #8e8e8e;
-  }
-  .plant-user{
-    font-size: 0.8em;
-    color: #8e8e8e;
-  }
+    .plant-card {
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+    }
 
-  .card-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .card-header {
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .card-body {
-    padding: 10px 15px;
-  }
+    .plant-name {
+      font-weight: 600;
+      display: block;
+    }
 
-  .card-actions {
-    font-size: 24px;
-    display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
+    .plant-origin {
+      font-size: 0.8em;
+      color: #8e8e8e;
+    }
+    .plant-user {
+      font-size: 0.8em;
+      color: #8e8e8e;
+    }
 
-  .card-actions span {
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .card-actions span:hover {
-    transform: scale(1.1);
-  }
+    .card-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-  .ai-analysis h4 {
-    margin: 10px 0 5px 0;
-    border-bottom: 1px solid #efefef;
-    padding-bottom: 5px;
-  }
+    .card-body {
+      padding: 10px 15px;
+    }
 
-  .ai-analysis p {
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin: 5px 0;
-  }
+    .card-actions {
+      font-size: 24px;
+      display: flex;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
 
-  .status-healthy {
-    color: #2e7d32;
-    font-weight: bold;
-  }
+    .card-actions span {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card-actions span:hover {
+      transform: scale(1.1);
+    }
 
-  /* Estilos para la sección de introducción */
-  .section1 {
-    display: flex;
-    align-items: center;
-    padding: 40px 20px;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto; /* Centrar la sección */
-  }
-  .section1_img {
-    flex: 1;
-  }
-  .section1_img img {
-    width: 100%;
-    border-radius: 12px;
-  }
-  .section_text {
-    flex: 1.5;
-  }
+    .ai-analysis h4 {
+      margin: 10px 0 5px 0;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 5px;
+    }
 
-  /* Título de la sección de exploración */
-  .explore-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
+    .ai-analysis p {
+      font-size: 0.9em;
+      line-height: 1.4;
+      margin: 5px 0;
+    }
+
+    .status-healthy {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    /* Estilos para la sección de introducción */
+    .section1 {
+      display: flex;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto; /* Centrar la sección */
+    }
+    .section1_img {
+      flex: 1;
+    }
+    .section1_img img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .section_text {
+      flex: 1.5;
+    }
+
+    /* Título de la sección de exploración */
+    .explore-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
   </style>
 
   <script>
-    const preguntaTextarea = document.getElementById('pregunta');
-    const respuestaTextarea = document.getElementById('respuesta');
-    const enviarButton = document.getElementById('enviar');
-    const sendIcon = document.getElementById('send-icon');
-    const loadingSpinner = document.getElementById('loading');
+    const preguntaTextarea = document.getElementById("pregunta");
+    const respuestaTextarea = document.getElementById("respuesta");
+    const enviarButton = document.getElementById("enviar");
+    const sendIcon = document.getElementById("send-icon");
+    const loadingSpinner = document.getElementById("loading");
 
     async function enviarPregunta() {
       const pregunta = (preguntaTextarea as HTMLTextAreaElement).value;
       if (!pregunta.trim()) return;
-      
+
       (enviarButton as HTMLButtonElement).disabled = true;
-      if (sendIcon) sendIcon.style.display = 'none';
-      if (loadingSpinner) loadingSpinner.style.display = 'inline-block';
-      (respuestaTextarea as HTMLTextAreaElement).value = 'Procesando...';
+      if (sendIcon) sendIcon.style.display = "none";
+      if (loadingSpinner) loadingSpinner.style.display = "inline-block";
+      (respuestaTextarea as HTMLTextAreaElement).value = "Procesando...";
 
       try {
-        const response = await fetch('/api/ia', {
-          method: 'POST',
+        const response = await fetch("/api/ia", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': '35434285d213edcbe5f57b38fc12fe2d481603aeeb372f098e779b74ea3ec646'
+            "Content-Type": "application/json",
+            "x-api-key":
+              "35434285d213edcbe5f57b38fc12fe2d481603aeeb372f098e779b74ea3ec646",
           },
-          body: JSON.stringify({ pregunta })
+          body: JSON.stringify({ pregunta }),
         });
-        
+
         if (!response.ok) {
-            const errorData = await response.json().catch(() => ({ error: 'Error desconocido en la API' }));
-            throw new Error(errorData.error || `Error: ${response.statusText}`);
+          const errorData = await response
+            .json()
+            .catch(() => ({ error: "Error desconocido en la API" }));
+          throw new Error(errorData.error || `Error: ${response.statusText}`);
         }
 
         const data = await response.json();
         (respuestaTextarea as HTMLTextAreaElement).value = data.respuesta;
       } catch (error) {
-        (respuestaTextarea as HTMLTextAreaElement).value = `Error al conectar con la IA: ${error.message}`;
+        (respuestaTextarea as HTMLTextAreaElement).value =
+          `Error al conectar con la IA: ${error.message}`;
         console.error(error);
       } finally {
         (enviarButton as HTMLButtonElement).disabled = false;
-        if (sendIcon) sendIcon.style.display = 'inline-block';
-        if (loadingSpinner) loadingSpinner.style.display = 'none';
+        if (sendIcon) sendIcon.style.display = "inline-block";
+        if (loadingSpinner) loadingSpinner.style.display = "none";
       }
     }
 
     if (enviarButton) {
-      enviarButton.addEventListener('click', enviarPregunta);
+      enviarButton.addEventListener("click", enviarPregunta);
     }
 
     if (preguntaTextarea) {
-      preguntaTextarea.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+      preguntaTextarea.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
           e.preventDefault();
           enviarPregunta();
         }
       });
     }
 
-    const showButton = document.getElementById('show-examples');
-    const ejemplosSection = document.getElementById('ejemplos');
+    const showButton = document.getElementById("show-examples");
+    const ejemplosSection = document.getElementById("ejemplos");
 
     if (showButton && ejemplosSection) {
-      showButton.addEventListener('click', () => {
-        const isHidden = ejemplosSection.style.display === 'none';
-        ejemplosSection.style.display = isHidden ? 'block' : 'none';
+      showButton.addEventListener("click", () => {
+        const isHidden = ejemplosSection.style.display === "none";
+        ejemplosSection.style.display = isHidden ? "block" : "none";
       });
     }
 
     // Modal Acceder
-    const abrirModal = document.getElementById('abrir-modal');
-    const cerrarModal = document.getElementById('cerrar-modal');
-    const modalAcceso = document.getElementById('modal-acceso');
+    const abrirModal = document.getElementById("abrir-modal");
+    const cerrarModal = document.getElementById("cerrar-modal");
+    const modalAcceso = document.getElementById("modal-acceso");
 
     if (abrirModal && modalAcceso) {
-      abrirModal.addEventListener('click', () => {
-        modalAcceso.style.display = 'block';
+      abrirModal.addEventListener("click", () => {
+        modalAcceso.style.display = "block";
       });
     }
     if (cerrarModal && modalAcceso) {
-      cerrarModal.addEventListener('click', () => {
-        modalAcceso.style.display = 'none';
+      cerrarModal.addEventListener("click", () => {
+        modalAcceso.style.display = "none";
       });
     }
     // Cerrar modal al hacer click fuera del contenido
-    window.addEventListener('click', (event) => {
+    window.addEventListener("click", (event) => {
       if (event.target === modalAcceso) {
-        modalAcceso.style.display = 'none';
+        modalAcceso.style.display = "none";
       }
     });
 
     // Login modal: lógica de formulario
-    const formLogin = document.getElementById('form-login');
-    const loginMsg = document.getElementById('login-msg');
+    const formLogin = document.getElementById("form-login");
+    const loginMsg = document.getElementById("login-msg");
     if (formLogin) {
-      formLogin.addEventListener('submit', (e) => {
+      formLogin.addEventListener("submit", (e) => {
         e.preventDefault();
-        const usuario = (document.getElementById('login-usuario') as HTMLInputElement).value;
-        const password = (document.getElementById('login-password') as HTMLInputElement).value;
+        const usuario = (
+          document.getElementById("login-usuario") as HTMLInputElement
+        ).value;
+        const password = (
+          document.getElementById("login-password") as HTMLInputElement
+        ).value;
         // Aquí puedes poner tu lógica real de autenticación
         if (usuario && password) {
-          usuario === 'admin' && password === '1234' ?
-          loginMsg.style.color = '#090' :
-          loginMsg.textContent = '¡Login exitoso! (simulado)';  
-          window.location.href = '/sub_pages/dasboard';
-      
+          usuario === "admin" && password === "1234"
+            ? (loginMsg.style.color = "#090")
+            : (loginMsg.textContent = "¡Login exitoso! (simulado)");
+          window.location.href = "/sub_pages/dasboard";
 
           // loginMsg.style.color = '#090';
           // loginMsg.textContent = '¡Login simulado exitoso! (aquí va tu lógica real)';
           // Cerrar el modal después de 1 segundo
           setTimeout(() => {
-            if (modalAcceso) modalAcceso.style.display = 'none';
-            loginMsg.textContent = '';
+            if (modalAcceso) modalAcceso.style.display = "none";
+            loginMsg.textContent = "";
             (formLogin as HTMLFormElement).reset();
           }, 1000);
         } else {
-          loginMsg.style.color = '#c00';
-          loginMsg.textContent = 'Por favor, completa ambos campos.';
+          loginMsg.style.color = "#c00";
+          loginMsg.textContent = "Por favor, completa ambos campos.";
         }
       });
     }
