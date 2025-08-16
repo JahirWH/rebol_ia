@@ -19,10 +19,10 @@ import Layout from "../layouts/Layout.astro";
       <span class="close" id="cerrar-modal">&times;</span>
       <h2>Acceso</h2>
       <form id="form-login" autocomplete="off">
-        <input type="text" id="username" placeholder="Usuario" required />
+        <input type="text" id="login-usuario" placeholder="Usuario" required />
         <input
           type="password"
-          id="password"
+          id="login-password"
           placeholder="Contraseña"
           required
         />
@@ -62,7 +62,6 @@ import Layout from "../layouts/Layout.astro";
       <h4>Esta es la red social de las plantas!!</h4>
     </div>
   </section>
-  <!-- 
   <section class="section_2">
     <div class="title_write">
       <h2>Vamos pregúntame y comencemos a plantar!!</h2>
@@ -70,33 +69,27 @@ import Layout from "../layouts/Layout.astro";
     <div class="chat-container">
       <div class="input-group">
         <label for="pregunta" class="sr-only">Tu pregunta</label>
-        <textarea 
-          id="pregunta" 
-          placeholder="Escribe tu pregunta aquí..." 
-          aria-label="Tu pregunta para Rebol-IA"
-        ></textarea>
+        <textarea
+          id="pregunta"
+          placeholder="Escribe tu pregunta aquí..."
+          aria-label="Tu pregunta para Rebol-IA"></textarea>
       </div>
       <div class="controls-group">
-        <button 
-          id="enviar" 
-          class="send-button" 
-          aria-label="Enviar pregunta"
-        >
+        <button id="enviar" class="send-button" aria-label="Enviar pregunta">
           <img src="/send.svg" alt="Enviar" id="send-icon" />
           <span class="loading" id="loading" style="display: none;"></span>
         </button>
       </div>
       <div class="response-group">
         <label for="respuesta">Respuesta de Rebol-IA:</label>
-        <textarea 
-          id="respuesta" 
-          readonly 
+        <textarea
+          id="respuesta"
+          readonly
           placeholder="La respuesta aparecerá aquí..."
-          aria-live="polite"
-        ></textarea>
+          aria-live="polite"></textarea>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <h4 class="explore-title">Comienza a explorar</h4>
 
@@ -305,6 +298,92 @@ import Layout from "../layouts/Layout.astro";
     }
     .section_text {
       flex: 1.5;
+    }
+
+    /* Estilos para la sección de chat */
+    .section_2 {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .title_write {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .chat-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+      font-family: inherit;
+    }
+
+    #respuesta {
+      background-color: #f8f9fa;
+    }
+
+    .send-button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s;
+    }
+
+    .send-button:hover {
+      background: #34495e;
+    }
+
+    .send-button:disabled {
+      background: #95a5a6;
+      cursor: not-allowed;
+    }
+
+    .loading {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* Título de la sección de exploración */
